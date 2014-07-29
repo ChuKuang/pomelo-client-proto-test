@@ -30,21 +30,19 @@
             this.tb_channel = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tb_data = new System.Windows.Forms.TextBox();
-            this.tb_mid = new System.Windows.Forms.TextBox();
             this.tb_route = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_port = new System.Windows.Forms.TextBox();
+            this.tb_ip = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tb_ip = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.tb_port = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -93,7 +91,7 @@
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(136, 21);
             this.tb_name.TabIndex = 1;
-            this.tb_name.Text = "username";
+            this.tb_name.Text = "53d60294d83b63c31b1af06f";
             // 
             // tb_channel
             // 
@@ -129,13 +127,21 @@
             this.panel1.Size = new System.Drawing.Size(254, 590);
             this.panel1.TabIndex = 100001;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 173);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(254, 145);
+            this.richTextBox1.TabIndex = 100005;
+            this.richTextBox1.Text = "使用说明：\n1.点击connect连服务器(无需填用户名密码)\n2.填写相应request数据，发送请求。";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tb_data);
-            this.groupBox2.Controls.Add(this.tb_mid);
             this.groupBox2.Controls.Add(this.tb_route);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.btn_send);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -148,20 +154,12 @@
             // 
             // tb_data
             // 
-            this.tb_data.Location = new System.Drawing.Point(47, 83);
+            this.tb_data.Location = new System.Drawing.Point(47, 47);
             this.tb_data.Multiline = true;
             this.tb_data.Name = "tb_data";
-            this.tb_data.Size = new System.Drawing.Size(204, 146);
+            this.tb_data.Size = new System.Drawing.Size(204, 182);
             this.tb_data.TabIndex = 9;
             this.tb_data.Text = "{\"id\":1001}";
-            // 
-            // tb_mid
-            // 
-            this.tb_mid.Location = new System.Drawing.Point(47, 47);
-            this.tb_mid.Name = "tb_mid";
-            this.tb_mid.Size = new System.Drawing.Size(204, 21);
-            this.tb_mid.TabIndex = 9;
-            this.tb_mid.Text = "InstanceMessage";
             // 
             // tb_route
             // 
@@ -169,25 +167,16 @@
             this.tb_route.Name = "tb_route";
             this.tb_route.Size = new System.Drawing.Size(204, 21);
             this.tb_route.TabIndex = 9;
-            this.tb_route.Text = "hall.hallHandler.reqInstance";
+            this.tb_route.Text = "hall.hallHandler.req";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 86);
+            this.label5.Location = new System.Drawing.Point(6, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 8;
             this.label5.Text = "data";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 12);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "mid";
             // 
             // label3
             // 
@@ -217,6 +206,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "GateServer";
             // 
+            // tb_port
+            // 
+            this.tb_port.Location = new System.Drawing.Point(190, 25);
+            this.tb_port.Name = "tb_port";
+            this.tb_port.Size = new System.Drawing.Size(46, 21);
+            this.tb_port.TabIndex = 10;
+            this.tb_port.Text = "3014";
+            // 
+            // tb_ip
+            // 
+            this.tb_ip.Location = new System.Drawing.Point(38, 25);
+            this.tb_ip.Name = "tb_ip";
+            this.tb_ip.Size = new System.Drawing.Size(93, 21);
+            this.tb_ip.TabIndex = 10;
+            this.tb_ip.Text = "192.168.0.156";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -235,23 +240,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Name:";
             // 
-            // tb_ip
-            // 
-            this.tb_ip.Location = new System.Drawing.Point(38, 25);
-            this.tb_ip.Name = "tb_ip";
-            this.tb_ip.Size = new System.Drawing.Size(93, 21);
-            this.tb_ip.TabIndex = 10;
-            this.tb_ip.Text = "192.168.0.156";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 12);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "ip";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -261,23 +249,14 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "port";
             // 
-            // tb_port
+            // label6
             // 
-            this.tb_port.Location = new System.Drawing.Point(190, 25);
-            this.tb_port.Name = "tb_port";
-            this.tb_port.Size = new System.Drawing.Size(46, 21);
-            this.tb_port.TabIndex = 10;
-            this.tb_port.Text = "3014";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 173);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(254, 145);
-            this.richTextBox1.TabIndex = 100005;
-            this.richTextBox1.Text = "使用说明：\n1.点击connect连服务器(无需填用户名密码)\n2.填写相应request数据，发送请求。";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(15, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(17, 12);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "ip";
             // 
             // Main
             // 
@@ -311,9 +290,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox tb_mid;
         private System.Windows.Forms.TextBox tb_route;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tb_data;
         private System.Windows.Forms.Label label5;

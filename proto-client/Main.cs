@@ -37,7 +37,7 @@ namespace Pomelo_NativeSocket {
         private void btn_connect_Click(object sender, EventArgs e) {
             _gate_server_ip = tb_ip.Text;
             if (string.IsNullOrEmpty(_gate_server_ip)) {
-                _gate_server_ip = "127.0.0.1";
+                _gate_server_ip = "192.168.0.156";
             }
             string port = tb_port.Text;
             if (string.IsNullOrEmpty(port)) {
@@ -149,7 +149,7 @@ namespace Pomelo_NativeSocket {
 
             string route = tb_route.Text;
 
-            string mid = tb_mid.Text;
+            //string mid = tb_mid.Text;
 
             string data_json = tb_data.Text;
             JsonObject msg = null;
@@ -162,7 +162,7 @@ namespace Pomelo_NativeSocket {
                 msg = new JsonObject();
             }
 
-            msg.Add("mid", mid);
+            //msg.Add("mid", mid);
 
             _pomelo.request(route, msg, (data) => {
                 AppendLog(data.ToString());
