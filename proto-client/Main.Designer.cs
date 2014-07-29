@@ -51,7 +51,7 @@
             // 
             // btn_send
             // 
-            this.btn_send.Location = new System.Drawing.Point(71, 235);
+            this.btn_send.Location = new System.Drawing.Point(71, 224);
             this.btn_send.Name = "btn_send";
             this.btn_send.Size = new System.Drawing.Size(140, 28);
             this.btn_send.TabIndex = 6;
@@ -89,7 +89,7 @@
             // 
             this.tb_name.Location = new System.Drawing.Point(71, 58);
             this.tb_name.Name = "tb_name";
-            this.tb_name.Size = new System.Drawing.Size(136, 21);
+            this.tb_name.Size = new System.Drawing.Size(165, 21);
             this.tb_name.TabIndex = 1;
             this.tb_name.Text = "53d60294d83b63c31b1af06f";
             // 
@@ -97,7 +97,7 @@
             // 
             this.tb_channel.Location = new System.Drawing.Point(71, 95);
             this.tb_channel.Name = "tb_channel";
-            this.tb_channel.Size = new System.Drawing.Size(136, 21);
+            this.tb_channel.Size = new System.Drawing.Size(165, 21);
             this.tb_channel.TabIndex = 2;
             this.tb_channel.Text = "password";
             // 
@@ -131,11 +131,11 @@
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 173);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 164);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(254, 145);
+            this.richTextBox1.Size = new System.Drawing.Size(254, 154);
             this.richTextBox1.TabIndex = 100005;
-            this.richTextBox1.Text = "使用说明：\n1.点击connect连服务器(无需填用户名密码)\n2.填写相应request数据，发送请求。";
+            this.richTextBox1.Text = "使用说明：\n1.点击connect连服务器 \n2.填写request数据(route&data)，发送请求。";
             // 
             // groupBox2
             // 
@@ -154,25 +154,30 @@
             // 
             // tb_data
             // 
-            this.tb_data.Location = new System.Drawing.Point(47, 47);
+            this.tb_data.AllowDrop = true;
+            this.tb_data.Location = new System.Drawing.Point(38, 47);
             this.tb_data.Multiline = true;
             this.tb_data.Name = "tb_data";
-            this.tb_data.Size = new System.Drawing.Size(204, 182);
+            this.tb_data.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tb_data.Size = new System.Drawing.Size(213, 171);
             this.tb_data.TabIndex = 9;
             this.tb_data.Text = "{\"id\":1001}";
+            this.tb_data.DragDrop += new System.Windows.Forms.DragEventHandler(this.tb_data_DragDrop);
+            this.tb_data.DragEnter += new System.Windows.Forms.DragEventHandler(this.tb_data_DragEnter);
+            this.tb_data.MouseHover += new System.EventHandler(this.tb_data_MouseHover);
             // 
             // tb_route
             // 
-            this.tb_route.Location = new System.Drawing.Point(47, 20);
+            this.tb_route.Location = new System.Drawing.Point(38, 20);
             this.tb_route.Name = "tb_route";
-            this.tb_route.Size = new System.Drawing.Size(204, 21);
+            this.tb_route.Size = new System.Drawing.Size(213, 21);
             this.tb_route.TabIndex = 9;
             this.tb_route.Text = "hall.hallHandler.req";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 50);
+            this.label5.Location = new System.Drawing.Point(3, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 8;
@@ -181,7 +186,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 23);
+            this.label3.Location = new System.Drawing.Point(2, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 12);
             this.label3.TabIndex = 7;
@@ -201,7 +206,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(254, 173);
+            this.groupBox1.Size = new System.Drawing.Size(254, 164);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "GateServer";

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6934B24F-C484-4CA9-9B9A-ECDC1B058169}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Pomelo_NativeSocket</RootNamespace>
     <AssemblyName>pomelo-client</AssemblyName>
@@ -35,9 +35,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SimpleJson, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2d51d9dcdc7a4d4f, processorArchitecture=MSIL">
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\SimpleJson.dll</HintPath>
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleJson">
+      <HintPath>..\lib\SimpleJson.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
