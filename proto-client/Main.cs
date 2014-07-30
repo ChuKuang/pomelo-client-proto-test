@@ -108,17 +108,17 @@ namespace Pomelo_NativeSocket
 
             _pomelo.connect(null, (data) =>
             {
-                if (Convert.ToInt32(data["code"]) == 200)
+               // if (Convert.ToInt32(data["code"]) == 200)
                 {
                     Console.WriteLine("成功连接 gate server :\n" + FormatJson(data.ToString()));
                     JsonObject msg = new JsonObject();
                     msg["uid"] = userName;
                     _pomelo.request("gate.gateHandler.queryEntry", msg, LoginGateServerCallback);
                 }
-                else
-                {
-                    AppendLog("oh shit...连接 gate 出错..");
-                }
+                //else
+                //{
+                //    AppendLog("oh shit...连接 gate 出错..");
+                //}
             });
         }
 
