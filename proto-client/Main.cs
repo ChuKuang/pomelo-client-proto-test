@@ -25,6 +25,12 @@ namespace Pomelo_NativeSocket
         {
              InitializeComponent();
             //AppendLog("Main Thread:" + Thread.CurrentThread.ManagedThreadId);
+
+             Transporter.OnSocketClosedEvent += (message) =>
+             {
+                 AppendLog(message);
+                // SetEnabled(true);
+             };
         }
 
 

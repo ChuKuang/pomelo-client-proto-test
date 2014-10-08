@@ -8,6 +8,9 @@ namespace Pomelo.DotNetClient {
     }
 
     public class Transporter {
+
+        public static event Action<string> OnSocketClosedEvent; 
+
         public const int HeadLength = 4;
 
         private Socket socket;
@@ -37,9 +40,20 @@ namespace Pomelo.DotNetClient {
         }
 
         public void send(byte[] buffer) {
-            if (this.transportState != TransportState.closed) {
-                this.asyncSend = socket.BeginSend(buffer, 0, buffer.Length, SocketFlags.None, new AsyncCallback(sendCallback), socket);
-                this.onSending = true;
+            try
+            {
+                if (this.transportState != TransportState.closed)
+                {
+                    this.asyncSend = socket.BeginSend(buffer, 0, buffer.Length, SocketFlags.None, new AsyncCallback(sendCallback), socket);
+                    this.onSending = true;
+                }
+            }
+            catch (Exception e)
+            {
+                if (OnSocketClosedEvent != null)
+                {
+                    OnSocketClosedEvent(e.Message);
+                }
             }
         }
 
@@ -67,22 +81,34 @@ namespace Pomelo.DotNetClient {
         }
 
         private void endReceive(IAsyncResult asyncReceive) {
-            if (this.transportState == TransportState.closed)
-                return;
-            StateObject state = (StateObject)asyncReceive.AsyncState;
-            Socket socket = this.socket;
-            int length = socket.EndReceive(asyncReceive);
-            this.onReceiving = false;
+            try
+            {
+                if (this.transportState == TransportState.closed)
+                    return;
+                StateObject state = (StateObject)asyncReceive.AsyncState;
+                Socket socket = this.socket;
+                int length = socket.EndReceive(asyncReceive);
+                this.onReceiving = false;
 
-            if (length > 0) {
-                processBytes(state.buffer, 0, length);
-                //Receive next message
-                if (this.transportState != TransportState.closed)
-                    receive();
+                if (length > 0)
+                {
+                    processBytes(state.buffer, 0, length);
+                    //Receive next message
+                    if (this.transportState != TransportState.closed)
+                        receive();
+                }
+                else
+                {
+                    if (this.onDisconnect != null)
+                        this.onDisconnect();
+                }
             }
-            else {
-                if (this.onDisconnect != null)
-                    this.onDisconnect();
+            catch (Exception e)
+            {
+                if (OnSocketClosedEvent != null)
+                {
+                    OnSocketClosedEvent(e.Message);
+                }
             }
         }
 
