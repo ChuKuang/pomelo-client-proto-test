@@ -70,4 +70,8 @@
     <Compile Include="src\client\PomeloClient.cs" />
     <Compile Include="src\client\test\ClientTest.cs" />
   </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>

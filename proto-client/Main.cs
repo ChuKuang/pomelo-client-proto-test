@@ -179,6 +179,11 @@ namespace Pomelo_NativeSocket
                 _pomelo.request("connector.entryHandler.entry", userMessage, (data) =>
                 {
                     AppendLog("进入 channel:\n" + FormatJson(data.ToString()));
+
+                    _pomelo.on("onPush", (message) =>
+                    {
+                        AppendLog("onPush:\n" + FormatJson(data.ToString()));
+                    });
                 });
             }
         }

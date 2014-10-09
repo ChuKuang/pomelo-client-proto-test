@@ -14,9 +14,10 @@ namespace Pomelo_NativeSocket {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.Automatic);
             Application.ThreadException += new ThreadExceptionEventHandler(ApplicationThreadException);
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomainUnhandledException);
-
+            
             Application.Run(new Main());
         }
 
