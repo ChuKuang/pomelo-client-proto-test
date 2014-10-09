@@ -182,7 +182,7 @@ namespace Pomelo_NativeSocket
 
                     _pomelo.on("onPush", (message) =>
                     {
-                        AppendLog("onPush:\n" + FormatJson(data.ToString()));
+                        AppendLog("onPush:\n" + FormatJson(message.ToString()));
                     });
                 });
             }

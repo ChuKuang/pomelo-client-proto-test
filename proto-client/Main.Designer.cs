@@ -73,7 +73,7 @@
             // 
             this.tb_info.BackColor = System.Drawing.SystemColors.InfoText;
             this.tb_info.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_info.Font = new System.Drawing.Font("SimSun", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tb_info.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tb_info.ForeColor = System.Drawing.Color.SpringGreen;
             this.tb_info.Location = new System.Drawing.Point(3, 3);
             this.tb_info.Multiline = true;
@@ -225,7 +225,7 @@
             this.tb_ip.Name = "tb_ip";
             this.tb_ip.Size = new System.Drawing.Size(93, 21);
             this.tb_ip.TabIndex = 10;
-            this.tb_ip.Text = "192.168.0.156";
+            this.tb_ip.Text = "127.0.0.1";
             // 
             // label2
             // 
